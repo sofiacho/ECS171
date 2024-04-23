@@ -37,7 +37,7 @@
 
 ### Overall size
 
-- 8-10 pages excluding references, following a 2-column IEEE conference formatting guidelines : https://www.ieee.org/conferences/publishing/templates.htmlLinks to an external site.
+- 8-10 pages excluding references, following a 2-column IEEE conference formatting guidelines: https://www.ieee.org/conferences/publishing/templates.html Links to an external site.
 - There is a 5 point penalty for each additional page (excluding the references).
 - Make sure to include figures and tables sufficiently to share important insights and fundings.
 - The Github link to the source code of your project should be included in the last page of your final report.
