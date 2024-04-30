@@ -1,4 +1,4 @@
-# ECS171
+# ECS 171 Machine Learning
 
 ## Group Project Guidelines
 
