@@ -1,5 +1,4 @@
-      Characteristics of Dataset
-      ==========================
+#### Characteristics of Dataset
 
 The files for the dataset represent a individual trial performed by a subject wearing 
 a wireless batteryless sensor. Each trial consists of the performance of scripted ADL. 
@@ -18,7 +17,6 @@ Column 7: Phase
 Column 8: Frequency
 Column 9: Label of activity, 1: sit on bed, 2: sit on chair, 3: lying, 4: ambulating
 
-Additional Information
-======================
+#### Additional Information
 
 If you wish to use these datasets please cite this paper.
