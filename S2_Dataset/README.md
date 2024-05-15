@@ -14,7 +14,7 @@ Column 4: Acceleration reading in G for lateral axis
 ~~Column 5: Id of antenna reading sensor~~  
 ~~Column 6: Received signal strength indicator (RSSI)~~  
 ~~Column 7: Phase~~  
-Column 8: Frequency  
+~~Column 8: Frequency~~  
 Column 9: Label of activity, 1: sit on bed, 2: sit on chair, 3: lying, 4: ambulating
 
 ### Additional Information
