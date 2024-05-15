@@ -19,4 +19,6 @@ Column 9: Label of activity, 1: sit on bed, 2: sit on chair, 3: lying, 4: ambula
 
 ### Additional Information
 
-If you wish to use these datasets please cite this paper.
+This dataset contains the motion data of 14 healthy older aged between 66 and 86 years old, performed broadly scripted activities using a batteryless, wearable sensor on top of their clothing at sternum level. Data is sparse and noisy due to the use of a passive sensor.
+
+Participants were allocated in two clinical room settings (S1 and S2). The setting of S1 (Room1) uses 4 RFID reader antennas around the room (one on ceiling level, and 3 on wall level) for the collection of data, whereas the room setting S2 (Room2) uses 3 RFID reader antennas (two at ceiling level and one at wall level) for the collection of motion data. 
