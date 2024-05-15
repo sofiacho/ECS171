@@ -1,5 +1,6 @@
 ## Preprocessing
-- [ ] wait on email response  
+- [ ] wait on email response
+- [ ] possible extra features: gender, RSSI
 
 ## Algorithm implementation
 
