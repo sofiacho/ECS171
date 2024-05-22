@@ -2,6 +2,7 @@
 - [X] Sofia  
 - [ ] add columns for all independent variables
 - [ ] normalize RSSI data
+- [ ] split training and testing data
 
 ## Algorithm implementation
 
