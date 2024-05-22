@@ -1,7 +1,7 @@
 ## Preprocessing
-- Sofia  
-- [ ] wait on email response
-- [ ] possible extra features: gender, RSSI
+- [X] Sofia  
+- [ ] add columns for all independent variables
+- [ ] normalize RSSI data
 
 ## Algorithm implementation
 
