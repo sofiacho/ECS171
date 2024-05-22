@@ -1,9 +1,9 @@
 ## Preprocessing
 - [x] wait on email response
 - [x] possible extra features: gender, RSSI
-- [ ] add extra columns gender, frequency of activity, and activity status
+- [ ] add extra columns for gender, frequency of activity, acceleration, and activity status (inactive or active)
 - [ ] combine S1 and S2 as 1 dataframe
-- [ ] normalize data
+- [ ] normalize RSSI data to values \[-1,0\]
 - [ ] split data into training/testing sets using 25:75 split
 
 ## Algorithm implementation
