@@ -12,7 +12,7 @@ Comma separated values (CSV) format.
 - Column 3: Acceleration reading in G for vertical axis  
 - Column 4: Acceleration reading in G for lateral axis  
 - ~~Column 5: Id of antenna reading sensor~~  
-- ~~Column 6: Received signal strength indicator (RSSI)~~  
+- Column 6: Received signal strength indicator (RSSI)  
 - ~~Column 7: Phase~~  
 - ~~Column 8: Frequency~~  
 - Column 9: Label of activity
