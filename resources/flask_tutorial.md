@@ -89,4 +89,4 @@ Keep in mind that the project description include developing a basic web-based f
     ```
 6. Run the application
    - In your terminal within the project directory, execute: `python3 app.py`
-   - Open your web browser and navigate to `http://localhost:5000`. You should see the HTML form. 
+   - Open your web browser and navigate to `http://localhost:8000`. You should see the HTML form. 

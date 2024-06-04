@@ -3,11 +3,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import { CookiesProvider, useCookies } from "react-cookie";
-import { io } from "socket.io-client";
 
 function App() {
 
-  const backendUrl = "http://localhost:5000";
+  const backendUrl = "http://localhost:8000";
 
   axios.create({withCredentials:true})
   axios.defaults.withCredentials = true
@@ -26,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <p>Results: {predictions}</p>
-      <button onClick={() => {queryBackend()}}>Click to query flask</button>
+      <button onClick={() => {queryBackend()}}>Click to query backend</button>
     </div>
   );
 }

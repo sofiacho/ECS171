@@ -1,5 +1,0 @@
-class AppConfig:
-  CORS_HEADERS = 'Content-Type'
-  
-  SECRET_KEY = "secret neural network key"  
-  SESSION_TYPE = "filesystem"
