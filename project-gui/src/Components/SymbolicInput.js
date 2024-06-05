@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function CountableInput(props) {
+function SymbolicInput(props) {
 
   const featureName = props.feature;
   const displayName = props.name;
@@ -36,4 +36,4 @@ function CountableInput(props) {
   );
 }
 
-export default CountableInput;
+export default SymbolicInput;

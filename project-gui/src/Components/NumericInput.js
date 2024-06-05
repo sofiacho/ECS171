@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function FloatInput(props) {
+function NumericInput(props) {
 
   const featureName = props.feature;
   const displayName = props.name;
@@ -39,15 +39,23 @@ function FloatInput(props) {
         step={incrementSize}
         onChange={(e) => {
           const value = parseFloat(e.target.value);
+          setValue(value);
+        }}
+        onBlur={(e) => {
+          let value;
+          if (incrementSize%1 == 0 && stepSize%1 == 0) {
+            value = parseInt(e.target.value)
+          } else {
+            value = parseFloat(e.target.value)
+          }
+
           if (value >= minValue && value <= maxValue) {
             setValue(value);
+          } else {
+            setValue(minValue);
           }
-        }}
-        onBlur={sendValue}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === 'Tab') {
-            sendValue();
-          }
+          
+          sendValue();
         }}
         className="value_input"
       />
@@ -58,11 +66,21 @@ function FloatInput(props) {
         max={maxValue}
         step={stepSize}
         value={inValue}
-        onChange={(e) => {setValue(parseFloat(e.target.value))}}
+        onChange={(e) => {
+          let value;
+          
+          if (incrementSize%1 == 0 && stepSize%1 == 0) {
+            value = parseInt(e.target.value)
+          } else {
+            value = parseFloat(e.target.value)
+          }
+
+          setValue(parseFloat(value))
+        }}
         onMouseUp={sendValue}
       />
     </div>
   );
 }
 
-export default FloatInput;
+export default NumericInput;

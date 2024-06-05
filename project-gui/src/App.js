@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
-import FloatInput from "./Components/FloatInput";
-import CountableInput from "./Components/CountableInput";
+import NumericInput from "./Components/NumericInput";
+import SymbolicInput from "./Components/SymbolicInput";
 
 function App() {
 
@@ -52,89 +52,89 @@ function App() {
     <div className="App">
       <div></div>
       <ul>
-        <FloatInput
+        <NumericInput
           feature= "time" name= "Time" 
           minVal= {0} maxVal= {730} stepSize = {.1} increment= {5}
           onValueCommitted={(feature, value) => {
             updateInputs(feature, value);
           }}
         />
-        <CountableInput
+        <SymbolicInput
           feature = "room" name= "Room"
           options= {["Room 0", "Room 1", "Room 2"]}
           OnChoose= {(feature, value) => {
             updateInputs(feature, value);
           }}
         />
-        <FloatInput
+        <NumericInput
           feature= "accel_front" name= "Frontal Acceleration"
           minVal = {-2} maxVal = {2} stepSize = {.01} increment= {.1}
           onValueCommitted = {(feature, value) => {
             updateInputs(feature, value);
           }}
         />
-        <FloatInput
+        <NumericInput
           feature= "accel_vert" name= "Vertical Acceleration"
           minVal = {-2} maxVal = {2} stepSize = {.01} increment= {.1}
           onValueCommitted = {(feature, value) => {
             updateInputs(feature, value);
           }}
         />
-        <FloatInput
+        <NumericInput
           feature= "accel_lat" name= "Lateral Acceleration"
           minVal = {-2} maxVal = {2} stepSize = {.01} increment= {.1}
           onValueCommitted = {(feature, value) => {
             updateInputs(feature, value);
           }}
         />
-        <CountableInput
+        <SymbolicInput
           feature = "antenna" name= "Antenna ID"
           options = {["Antenna 1", "Antenna 2", "Antenna 3", "Antenna 4"]}
           OnChoose= {(feature, value) => {
             updateInputs(feature, value);
           }}
         />
-        <FloatInput
+        <NumericInput
           feature= "rssi" name= "RSSI"
           minVal = {-1} maxVal = {0} stepSize = {.01} increment= {.05}onValueCommitted = {(feature, value) => {
             updateInputs(feature, value);
           }}
         />
-        <FloatInput
+        <NumericInput
           feature= "phase" name= "Phase"
           minVal = {0} maxVal = {6.5} stepSize = {.05} increment= {.1}onValueCommitted = {(feature, value) => {
             updateInputs(feature, value);
           }}
         />
-        <FloatInput
+        <NumericInput
           feature= "frequency" name= "Frequency"
           minVal = {900} maxVal = {930} stepSize = {1} increment= {5}
           onValueCommitted = {(feature, value) => {
             updateInputs(feature, value);
           }}
         />
-        <CountableInput
+        <SymbolicInput
           feature= "gender" name= "Gender"
           options= {["Female", "Male"]}
           OnChoose= {(feature, value) => {
             updateInputs(feature, value);
           }}
         />
-        <CountableInput
+        <NumericInput
           feature= "consecutiveness" name= "Consecutiveness"
-          options= {["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
-          OnChoose= {(feature, value) => {
+          minVal = {0} maxVal = {1000} stepSize = {1} increment= {10}
+          onValueCommitted= {(feature, value) => {
             updateInputs(feature, value);
           }}
         />
-        <CountableInput
+        <SymbolicInput
           feature= "activity" name= "Activity Type"
           options= {["sitting on bed", "lying down", "ambulating", "sitting on chair"]}
           OnChoose= {(feature, value) => {
             updateInputs(feature, value);
           }}
         />
-        <FloatInput
+        <NumericInput
           feature= "freq" name= "Frequency of Activity"
           minVal = {0} maxVal = {1} stepSize = {.01} increment= {.1}
           onValueCommitted = {(feature, value) => {
