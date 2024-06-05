@@ -103,5 +103,5 @@ async def getPredictions(inputs: ModelInputs, request: Request):
   print(f"{predictions[0][0]} results in {prediction}")
   
   return {
-    "prediction": f"The model predicts that a subject with the given parameters is {prediction}"
+    "prediction": prediction
   }

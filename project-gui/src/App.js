@@ -11,7 +11,7 @@ function App() {
   axios.create({withCredentials:true})
   axios.defaults.withCredentials = true
 
-  const [predictions, setPredictions] = useState("No Predictions");
+  const [predictions, setPredictions] = useState(null);
   const [inputs, setInputs] = useState({});
   const updateInputs = (feature, value) => {
     setInputs(prevInputs => ({
@@ -143,7 +143,15 @@ function App() {
         />
       </ul>
       <button onClick={() => {queryBackend()}}>Click to query backend</button>
-      <p>Results: {predictions}</p>
+      <p>
+        {
+          predictions ?
+          (<span>Results: {
+              <span style={{color: predictions == 'Active' ? 'green' : 'red'}}>{predictions}</span>
+            }</span>) :
+          (<span>Try submitting the inputs to see if the model thinks this person is active or inactive!</span>)
+        }
+      </p>
     </div>
   );
 }
