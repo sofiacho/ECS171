@@ -96,7 +96,7 @@ function App() {
         />
         <FloatInput
           feature= "rssi" name= "RSSI"
-          minVal = {-70} maxVal = {-38} stepSize = {.1} increment= {.25}onValueCommitted = {(feature, value) => {
+          minVal = {-1} maxVal = {0} stepSize = {.01} increment= {.05}onValueCommitted = {(feature, value) => {
             updateInputs(feature, value);
           }}
         />
@@ -122,7 +122,7 @@ function App() {
         />
         <CountableInput
           feature= "consecutiveness" name= "Consecutiveness"
-          options= {["0", "1"]}
+          options= {["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]}
           OnChoose= {(feature, value) => {
             updateInputs(feature, value);
           }}

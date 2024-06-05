@@ -17,7 +17,7 @@ function FloatInput(props) {
 
   function sendValue() {
     if (inValue >= minValue && inValue <= maxValue && props.onValueCommitted) {
-      props.onValueCommitted(featureName, (inValue - minValue) / range);
+      props.onValueCommitted(featureName, inValue);
     }
   }
 

@@ -75,7 +75,11 @@ class ModelInputs(BaseModel):
     acceleration: float
 
 @app.put('/')
-async def getPredictions(inputs: ModelInputs):
+async def getPredictions(inputs: ModelInputs, request: Request):
+  
+  json_dat = await request.json()
+  for key, value in json_dat.items():
+    print(f"{key}: {value}")
   
   input_data = pd.DataFrame({
             'time': [inputs.time],
