@@ -120,6 +120,7 @@ function App() {
             updateInputs(feature, value);
           }}
         />
+        {/*
         <NumericInput
           feature= "consecutiveness" name= "Consecutiveness"
           minVal = {0} maxVal = {1000} stepSize = {1} increment= {10}
@@ -141,6 +142,7 @@ function App() {
             updateInputs(feature, value);
           }}
         />
+        */}
       </ul>
       <button onClick={() => {queryBackend()}}>Click to query backend</button>
       <p>

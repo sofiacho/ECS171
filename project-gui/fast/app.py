@@ -69,10 +69,51 @@ class ModelInputs(BaseModel):
     phase: float
     frequency: float
     gender: int
-    consecutiveness: int
-    activity: int
-    freq: float
+    # consecutiveness: int
+    # activity: int
+    # freq: float
     acceleration: float
+
+# this function normalizes inputs using z-score with pre-computed means and standard deviations
+def z_standardize(inputs: ModelInputs):
+  means = {
+    'time': 299.08041575710786,
+    'frontal accel': 0.714211430786125,
+    'vertical accel': 0.3451994758398999,
+    'lateral accel': -0.21747701003354275,
+    'rssi': -58.277253487381536,
+    'phase': 3.157278575107816,
+    'frequency': 922.6705356192099,
+    'acceleration': 1.0948324783556123,
+  }
+
+  stds = {
+    'time': 257.5030020460596,
+    'frontal accel': 0.40458496931471427,
+    'vertical accel': 0.41904111439868014,
+    'lateral accel': 0.4382190451534665,
+    'rssi': 5.174082546628303,
+    'phase': 2.182257002672122,
+    'frequency': 1.679093166786223,
+    'acceleration': 0.09598007669023396,
+  }
+  
+  return {
+    'time': [(inputs.time - means['time']) / stds['time']],
+    'room': [inputs.room],
+    'frontal accel': [(inputs.accel_front - means['accel_front']) / stds['accel_front']],
+    'vertical accel': [(inputs.accel_vert - means['accel_vert']) / stds['accel_vert']],
+    'lateral accel': [(inputs.accel_lat - means['accel_lat']) / stds['accel_lat']],
+    'antenna id': [inputs.antenna],
+    'rssi': [(inputs.rssi - means['rssi']) / stds['rssi']],
+    'phase': [(inputs.phase - means['phase']) / stds['phase']],
+    'frequency': [(inputs.frequency - means['frequency']) / stds['frequency']],
+    'gender': [inputs.gender],
+    # 'consecutiveness': [(inputs.consecutiveness - means['consecutiveness']) / stds['consecutiveness']],
+    # 'activity': [inputs.activity],
+    'acceleration': [(inputs.acceleration - means['acceleration']) / stds['acceleration']],
+    # 'freq': [(inputs.freq - means['freq']) / stds['freq']],
+  }
 
 @app.put('/')
 async def getPredictions(inputs: ModelInputs, request: Request):
@@ -81,25 +122,10 @@ async def getPredictions(inputs: ModelInputs, request: Request):
   for key, value in json_dat.items():
     print(f"{key}: {value}")
   
-  input_data = pd.DataFrame({
-            'time': [inputs.time],
-            'room': [inputs.room],
-            'frontal accel': [inputs.accel_front],
-            'vertical accel': [inputs.accel_vert],
-            'lateral accel': [inputs.accel_lat],
-            'antenna id': [inputs.antenna],
-            'rssi': [inputs.rssi],
-            'phase': [inputs.phase],
-            'frequency': [inputs.frequency],
-            'gender': [inputs.gender],
-            'consecutiveness': [inputs.consecutiveness],
-            'activity': [inputs.activity],
-            'acceleration': [inputs.acceleration],
-            'freq': [inputs.freq],
-                }).values
+  input_data = pd.DataFrame(z_standardize(inputs)).values
   
   predictions = model.predict(input_data)
-  prediction = "Active" if predictions[0][0] >= 0.043 else "Inactive"
+  prediction = "Active" if predictions[0][0] >= 0.1784 else "Inactive"
   print(f"{predictions[0][0]} results in {prediction}")
   
   return {
